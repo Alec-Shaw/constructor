@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dux41qehyjm5y"]
+
+[ext_resource type="Texture2D" uid="uid://c8qpwjhhu7bwl" path="res://sprites/sendvich_1metr.svg" id="1_t74qe"]
+
+[node name="Pipe2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t74qe")

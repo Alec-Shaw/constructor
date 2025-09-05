@@ -1,0 +1,60 @@
+{
+  "spheres": [
+	{
+	  "name": "Для газовых котлов и колонок",
+	  "single_series": "GS",
+	  "sandvich_series": ["GS-25", "GS-50"],
+	  "accessories_series": "GS/HF",
+	  "items": {
+		"GS": [
+		  {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321601", "price": 638, "diameter": "130 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},
+		  {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321602", "price": 727, "diameter": "150 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},
+		  {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321603", "price": 955, "diameter": "200 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},
+		  {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321604", "price": 1188, "diameter": "250 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},          
+		  {"name": "Craft GS труба 250", "batch": "GS", "sku": "c320301", "price": 955, "diameter": "130 мм", "link": "https://example.com/truba1m", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
+		  
+		  {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320101", "price": 2875, "diameter": "130 мм", "link": "https://example.com/truba1m", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
+		  {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320102", "price": 3304, "diameter": "150 мм", "link": "https://example.com/truba1m", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
+		  {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320103", "price": 4377, "diameter": "200 мм", "link": "https://example.com/truba1m", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
+		  {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320104", "price": 5453, "diameter": "250 мм", "link": "https://example.com/truba1m", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
+		  {"name": "Колено 45", "batch": "GS", "sku": "GS-003", "price": 600, "diameter": "110 мм", "link": "https://example.com/koleno45", "texture": "res://sprites/single/truba05m.svg", "scene": "res://scene/single/truba05m.tscn"}
+		],
+		"GS-25": [
+		  {"name": "Сэндвич 1 м", "batch": "GS-25", "sku": "GS25-001", "price": 1500, "diameter": "125 мм", "link": "https://example.com/sandvich1m", "texture": "res://sprites/sandvich/sandvich1m.svg", "scene": "res://scene/sandvich/sandvich1m.tscn"},
+		  {"name": "Колено 90", "batch": "GS-25", "sku": "GS25-002", "price": 800, "diameter": "110 мм", "link": "https://example.com/koleno90", "texture": "res://sprites/sandvich/sandvich_koleno90.svg", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"}
+		],
+		"GS-50": [
+		  {"name": "Сэндвич 0.5 м", "batch": "GS-50", "sku": "GS50-001", "price": 1200, "diameter": "180 мм", "link": "https://example.com/sandvich05m", "texture": "res://sprites/sandvich/sandvich05m.svg", "scene": "res://scene/sandvich/sandvich05m.tscn"}
+		],
+		"GS/HF": [
+		  {"name": "Кронштейн", "batch": "GS/HF", "sku": "GSHF-001", "price": 300, "diameter": "110 мм", "link": "https://example.com/kronshtein", "texture": "res://sprites/accessories/kronshtein.svg", "scene": "res://scene/accessories/kronshtein.tscn"},
+		  {"name": "Крышная разделка угловая", "batch": "GS/HF", "sku": "GSHF-002", "price": 450, "diameter": "125 мм", "link": "https://example.com/razdelka", "texture": "res://sprites/accessories/krishnaia_razdelka_uglovaya.svg", "scene": "res://scene/accessories/krishnaia_razdelka_uglovaya.tscn"}
+		]
+	  }
+	},
+	{
+	  "name": "Для печей, котлов и каминов",
+	  "single_series": "HF",
+	  "sandvich_series": ["HF-25", "HF-50"],
+	  "accessories_series": "GS/HF",
+	  "items": {
+		"HF": [
+		  {"name": "Адаптер", "batch": "HF", "sku": "HF-001", "price": 500, "diameter": "110 мм", "link": "https://example.com/adapter", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},
+		  {"name": "Труба 1 м", "batch": "HF", "sku": "HF-002", "price": 1000, "diameter": "125 мм", "link": "https://example.com/truba1m", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
+		  {"name": "Колено 45", "batch": "HF", "sku": "HF-003", "price": 600, "diameter": "110 мм", "link": "https://example.com/koleno45", "texture": "res://sprites/single/koleno45.svg", "scene": "res://scene/single/koleno45.tscn"}
+		],
+		"HF-50": [
+		  {"name": "Сэндвич 1 м", "batch": "HF-50", "sku": "HF25-001", "price": 1500, "diameter": "125 мм", "link": "https://example.com/sandvich1m", "texture": "res://sprites/sandvich/sandvich1m.svg", "scene": "res://scene/sandvich/sandvich1m.tscn"},
+		  {"name": "Колено 90", "batch": "HF-50", "sku": "HF25-002", "price": 800, "diameter": "110 мм", "link": "https://example.com/koleno90", "texture": "res://sprites/sandvich/sandvich_koleno90.svg", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"}
+		],
+		"HF-50B": [
+		  {"name": "Сэндвич 0.5 м", "batch": "HF-50B", "sku": "HF50-001", "price": 1200, "diameter": "180 мм", "link": "https://example.com/sandvich05m", "texture": "res://sprites/sandvich/sandvich05m.svg", "scene": "res://scene/sandvich/sandvich05m.tscn"}
+		],
+		"GS/HF": [
+		  {"name": "Кронштейн", "batch": "GS/HF", "sku": "GSHF-001", "price": 300, "diameter": "110 мм", "link": "https://example.com/kronshtein", "texture": "res://sprites/accessories/kronshtein.svg", "scene": "res://scene/accessories/kronshtein.tscn"},
+		  {"name": "Крышная разделка угловая", "batch": "GS/HF", "sku": "GSHF-002", "price": 450, "diameter": "125 мм", "link": "https://example.com/razdelka", "texture": "res://sprites/accessories/krishnaia_razdelka_uglovaya.svg", "scene": "res://scene/accessories/krishnaia_razdelka_uglovaya.tscn"}
+		]
+	  }
+	}
+  ]
+}

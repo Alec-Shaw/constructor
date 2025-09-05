@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2018 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="520mm" height="297mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 52000 29700" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:#727271;fill-rule:nonzero}
+    .fil0 {fill:url(#id0)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="15170.49" y1="12113.06" x2="43766.71" y2="12113.06">
+   <stop offset="0" style="stop-opacity:1; stop-color:#B2B3B3"/>
+   <stop offset="0.301961" style="stop-opacity:1; stop-color:#C5C6C6"/>
+   <stop offset="0.490196" style="stop-opacity:1; stop-color:#C5C6C6"/>
+   <stop offset="0.639216" style="stop-opacity:1; stop-color:#EBECEC"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D9DADA"/>
+  </linearGradient>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_657646792">
+   <polygon class="fil0" points="19634.23,191.61 15170.47,8918.27 43767.29,24035.55 32427.34,279.23 "/>
+   <polygon class="fil1" points="19510.68,-5.55 32510.68,-5.55 32510.68,279.23 19510.68,279.23 "/>
+   <polygon class="fil1" points="15136.97,8987.15 19510.68,-5.55 19700.52,55.3 15326.81,9048 "/>
+   <polygon class="fil1" points="43876.39,24264.1 32297.61,7.45 32510.68,-5.55 44066.23,24203.25 "/>
+   <polygon class="fil1" points="6386.6,4263.39 55790.16,30394.98 55790.16,30592.15 6386.6,4460.56 "/>
+  </g>
+ </g>
+</svg>

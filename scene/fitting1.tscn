@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://binnrs7wfb5t6"]
+
+[ext_resource type="Texture2D" uid="uid://lavqcdl1pa70" path="res://sprites/sandvich/adapter_start.svg" id="1_sl72d"]
+
+[node name="Fitting1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sl72d")

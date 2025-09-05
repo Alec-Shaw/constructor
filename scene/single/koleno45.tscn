@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0bsw3l0y3ey0"]
+
+[ext_resource type="Texture2D" uid="uid://ci0r1ygwv5gxy" path="res://sprites/single/koleno45.svg" id="1_emr5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emr5q"]
+resource_local_to_scene = true
+size = Vector2(67.0001, 94.0001)
+
+[node name="adapter" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_emr5q")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(7.62939e-06, 7.62939e-06)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.499991, -7.68899e-06)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_emr5q")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://binnrs7wfb5t6"]
+
+[ext_resource type="Texture2D" uid="uid://mauywbu5c8yt" path="res://sprites/sandvich/sandvich1m.svg" id="1_vbmlj"]
+
+[node name="sandvich1m" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(324, 1881)
+texture = ExtResource("1_vbmlj")

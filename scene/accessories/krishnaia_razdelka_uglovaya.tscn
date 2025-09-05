@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0bsw3l0y3ey0"]
+
+[ext_resource type="Texture2D" uid="uid://lcvnxk2nvfmi" path="res://sprites/accessories/krishnaia_razdelka_uglovaya.svg" id="1_8p0um"]
+
+[node name="adapter" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(249, 230)
+texture = ExtResource("1_8p0um")

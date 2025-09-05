@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://hqxbqh3hqm8s"]
+
+[ext_resource type="Texture2D" uid="uid://b4xf4r6epeeli" path="res://sprites/odnostennii_1metr.svg" id="1_12jyq"]
+
+[node name="Pipe1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_12jyq")

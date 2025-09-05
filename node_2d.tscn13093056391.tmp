@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3rj8faw6eqwi"]
+
+[ext_resource type="Texture2D" uid="uid://lavqcdl1pa70" path="res://sprites/adapter_startovi.svg" id="1_0hol4"]
+[ext_resource type="Script" uid="uid://bui3c37455okj" path="res://node_2d.gd" id="1_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://b4xf4r6epeeli" path="res://sprites/odnostennii_1metr.svg" id="2_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://c8qpwjhhu7bwl" path="res://sprites/sendvich_1metr.svg" id="3_kdubu"]
+[ext_resource type="Texture2D" uid="uid://cvbgdeguds1i8" path="res://sprites/base.png" id="4_d21ai"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_q6r6c")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 399.0
+offset_top = 1.0
+offset_right = 979.0
+offset_bottom = 378.0
+size_flags_vertical = 0
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 394.0
+offset_bottom = 1076.0
+size_flags_vertical = 0
+
+[node name="SeriesLabel" type="RichTextLabel" parent="ItemList"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 25.0
+offset_right = 185.0
+offset_bottom = 55.0
+text = "Серия"
+
+[node name="SeriesButton" type="OptionButton" parent="ItemList"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 60.0
+offset_right = 224.0
+offset_bottom = 94.0
+
+[node name="DiametrButton" type="OptionButton" parent="ItemList"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 150.0
+offset_right = 217.0
+offset_bottom = 188.0
+
+[node name="SeriesLabel2" type="RichTextLabel" parent="ItemList"]
+offset_left = 45.0
+offset_top = 114.0
+offset_right = 196.0
+offset_bottom = 144.0
+text = "Диаметр"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1484.0
+offset_top = 2.0
+offset_right = 1921.0
+offset_bottom = 1080.0
+size_flags_vertical = 0
+
+[node name="PrintButton" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 969.0
+offset_right = 307.0
+offset_bottom = 1029.0
+text = "Распечатать"
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(891, 999)
+texture = ExtResource("4_d21ai")
+
+[node name="Sendvich1Metr" type="Sprite2D" parent="."]
+position = Vector2(489, 564)
+scale = Vector2(0.053, 0.053)
+texture = ExtResource("3_kdubu")
+
+[node name="Odnostennii1Metr" type="Sprite2D" parent="."]
+position = Vector2(431, 595)
+scale = Vector2(0.0530001, 0.0815715)
+texture = ExtResource("2_q6r6c")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_left = 47.0
+offset_top = 219.0
+offset_right = 328.0
+offset_bottom = 798.0
+current_tab = 0
+
+[node name="ItemList1" type="ItemList" parent="TabContainer"]
+layout_mode = 2
+item_count = 1
+item_0/icon = ExtResource("1_0hol4")
+metadata/_tab_index = 0
+
+[node name="ItemList2" type="ItemList" parent="TabContainer"]
+visible = false
+layout_mode = 2
+item_count = 1
+item_0/icon = ExtResource("2_q6r6c")
+metadata/_tab_index = 1
+
+[node name="AdapterStartovi" type="Sprite2D" parent="."]
+position = Vector2(502, 362)
+scale = Vector2(0.053, 0.053)
+texture = ExtResource("1_0hol4")
+
+[node name="DisplaySprite" type="Sprite2D" parent="."]
+position = Vector2(30, 20)
+
+[node name="BuildArea" type="Node2D" parent="."]
+position = Vector2(758, 92)

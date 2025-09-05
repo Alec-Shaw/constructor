@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0bsw3l0y3ey0"]
+
+[ext_resource type="Texture2D" uid="uid://b81k750nv8apk" path="res://sprites/single/truba1m.png" id="1_tnf14"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnf14"]
+size = Vector2(45, 153)
+
+[node name="adapter" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tnf14")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(0.5, 9.5)
+shape = SubResource("RectangleShape2D_tnf14")
