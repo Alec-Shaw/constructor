@@ -1,10 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0bsw3l0y3ey0"]
 
-[ext_resource type="Texture2D" uid="uid://bkohgwybtc25p" path="res://sprites/single/truba05m.svg" id="1_ar2q3"]
+[ext_resource type="Texture2D" uid="uid://bjxjot8gabxvt" path="res://sprites/single/truba05m.png" id="1_ar2q3"]
 
 [node name="adapter" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(249, 230)
-scale = Vector2(0.3, 0.3)
+position = Vector2(-2.99998, 1)
 texture = ExtResource("1_ar2q3")

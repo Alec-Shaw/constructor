@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://binnrs7wfb5t6"]
 
-[ext_resource type="Texture2D" uid="uid://5qsbyfwrtbtk" path="res://sprites/sandvich/sandvich_koleno90.svg" id="1_mmk13"]
+[ext_resource type="Texture2D" uid="uid://bmtdyc3yb1lrq" path="res://sprites/sandvich/sandvich_koleno90.png" id="1_mmk13"]
 
 [node name="Fitting1" type="Node2D"]
 

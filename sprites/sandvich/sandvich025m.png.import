@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkohgwybtc25p"
-path="res://.godot/imported/truba05m.svg-f44b80ee2e738bc9d2d4eaa471ad8d43.ctex"
+uid="uid://d0euwd5bpt80g"
+path="res://.godot/imported/sandvich025m.png-950b3c90741dd0bfafa12de1a08383be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/single/truba05m.svg"
-dest_files=["res://.godot/imported/truba05m.svg-f44b80ee2e738bc9d2d4eaa471ad8d43.ctex"]
+source_file="res://sprites/sandvich/sandvich025m.png"
+dest_files=["res://.godot/imported/sandvich025m.png-950b3c90741dd0bfafa12de1a08383be.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

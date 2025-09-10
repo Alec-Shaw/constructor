@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://binnrs7wfb5t6"]
 
-[ext_resource type="Texture2D" uid="uid://bdptuvpvrigwv" path="res://sprites/sandvich/sandvich025m.svg" id="1_0w6h1"]
+[ext_resource type="Texture2D" uid="uid://d0euwd5bpt80g" path="res://sprites/sandvich/sandvich025m.png" id="1_0w6h1"]
 
 [node name="Fitting1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_0w6h1")

@@ -1,60 +1,137 @@
 {
   "spheres": [
-    {
-      "name": "Для газовых котлов и колонок",
-      "single_series": "GS",
-      "sandvich_series": ["GS-25", "GS-50"],
-      "accessories_series": "GS/HF",
-      "items": {
-        "GS": [
-          {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321601", "price": 638, "diameter": "130 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},
-          {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321602", "price": 727, "diameter": "150 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},
-          {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321603", "price": 955, "diameter": "200 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},
-          {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321604", "price": 1188, "diameter": "250 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},          
-          {"name": "Craft GS труба 250", "batch": "GS", "sku": "c320301", "price": 955, "diameter": "130 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-250", "texture": "res://sprites/single/truba025m.svg", "scene": "res://scene/single/truba025m.tscn"},
-          
-          {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320101", "price": 2875, "diameter": "130 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-1000", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
-          {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320102", "price": 3304, "diameter": "150 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-1000", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
-          {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320103", "price": 4377, "diameter": "200 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-1000", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
-          {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320104", "price": 5453, "diameter": "250 мм", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-1000", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
-          {"name": "Колено 45", "batch": "GS", "sku": "GS-003", "price": 600, "diameter": "110 мм", "link": "https://example.com/koleno45", "texture": "res://sprites/single/truba05m.svg", "scene": "res://scene/single/truba05m.tscn"}
-        ],
-        "GS-25": [
-          {"name": "Сэндвич 1 м", "batch": "GS-25", "sku": "GS25-001", "price": 1500, "diameter": "125 мм", "link": "https://example.com/sandvich1m", "texture": "res://sprites/sandvich/sandvich1m.svg", "scene": "res://scene/sandvich/sandvich1m.tscn"},
-          {"name": "Колено 90", "batch": "GS-25", "sku": "GS25-002", "price": 800, "diameter": "110 мм", "link": "https://example.com/koleno90", "texture": "res://sprites/sandvich/sandvich_koleno90.svg", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"}
-        ],
-        "GS-50": [
-          {"name": "Сэндвич 0.5 м", "batch": "GS-50", "sku": "GS50-001", "price": 1200, "diameter": "180 мм", "link": "https://example.com/sandvich05m", "texture": "res://sprites/sandvich/sandvich05m.svg", "scene": "res://scene/sandvich/sandvich05m.tscn"}
-        ],
-        "GS/HF": [
-          {"name": "Кронштейн", "batch": "GS/HF", "sku": "GSHF-001", "price": 300, "diameter": "110 мм", "link": "https://example.com/kronshtein", "texture": "res://sprites/accessories/kronshtein.svg", "scene": "res://scene/accessories/kronshtein.tscn"},
-          {"name": "Крышная разделка угловая", "batch": "GS/HF", "sku": "GSHF-002", "price": 450, "diameter": "125 мм", "link": "https://example.com/razdelka", "texture": "res://sprites/accessories/krishnaia_razdelka_uglovaya.svg", "scene": "res://scene/accessories/krishnaia_razdelka_uglovaya.tscn"}
-        ]
-      }
-    },
-    {
-      "name": "Для печей, котлов и каминов",
-      "single_series": "HF",
-      "sandvich_series": ["HF-25", "HF-50"],
-      "accessories_series": "GS/HF",
-      "items": {
-        "HF": [
-          {"name": "Адаптер", "batch": "HF", "sku": "HF-001", "price": 500, "diameter": "110 мм", "link": "https://example.com/adapter", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},
-          {"name": "Труба 1 м", "batch": "HF", "sku": "HF-002", "price": 1000, "diameter": "125 мм", "link": "https://example.com/truba1m", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
-          {"name": "Колено 45", "batch": "HF", "sku": "HF-003", "price": 600, "diameter": "110 мм", "link": "https://example.com/koleno45", "texture": "res://sprites/single/koleno45.svg", "scene": "res://scene/single/koleno45.tscn"}
-        ],
-        "HF-50": [
-          {"name": "Сэндвич 1 м", "batch": "HF-50", "sku": "HF25-001", "price": 1500, "diameter": "125 мм", "link": "https://example.com/sandvich1m", "texture": "res://sprites/sandvich/sandvich1m.svg", "scene": "res://scene/sandvich/sandvich1m.tscn"},
-          {"name": "Колено 90", "batch": "HF-50", "sku": "HF25-002", "price": 800, "diameter": "110 мм", "link": "https://example.com/koleno90", "texture": "res://sprites/sandvich/sandvich_koleno90.svg", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"}
-        ],
-        "HF-50B": [
-          {"name": "Сэндвич 0.5 м", "batch": "HF-50B", "sku": "HF50-001", "price": 1200, "diameter": "180 мм", "link": "https://example.com/sandvich05m", "texture": "res://sprites/sandvich/sandvich05m.svg", "scene": "res://scene/sandvich/sandvich05m.tscn"}
-        ],
-        "GS/HF": [
-          {"name": "Кронштейн", "batch": "GS/HF", "sku": "GSHF-001", "price": 300, "diameter": "110 мм", "link": "https://example.com/kronshtein", "texture": "res://sprites/accessories/kronshtein.svg", "scene": "res://scene/accessories/kronshtein.tscn"},
-          {"name": "Крышная разделка угловая", "batch": "GS/HF", "sku": "GSHF-002", "price": 450, "diameter": "125 мм", "link": "https://example.com/razdelka", "texture": "res://sprites/accessories/krishnaia_razdelka_uglovaya.svg", "scene": "res://scene/accessories/krishnaia_razdelka_uglovaya.tscn"}
-        ]
-      }
-    }
+	{
+	  "name": "Для газовых котлов и колонок",
+	  "single_series": "GS",
+	  "sandvich_series": ["GS-25", "GS-50"],
+	  "accessories_series": "GS/HF",
+	  "items": {
+		"GS": [
+		  {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321601", "price": 638, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.png", "scene": "res://scene/single/adapter.tscn"},
+		  {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321602", "price": 727, "diameter": "150 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.png", "scene": "res://scene/single/adapter.tscn"},
+		  {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321603", "price": 955, "diameter": "200 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.png", "scene": "res://scene/single/adapter.tscn"},
+		  {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321604", "price": 1188, "diameter": "250 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.png", "scene": "res://scene/single/adapter.tscn"},          
+		  
+		  {"name": "Craft GS труба 250", "batch": "GS", "sku": "c320301", "price": 955, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-250", "texture": "res://sprites/single/truba025m.png", "scene": "res://scene/single/truba025m.tscn"},
+		  {"name": "Craft GS труба 250", "batch": "GS", "sku": "c320302", "price": 1082, "diameter": "150 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-250", "texture": "res://sprites/single/truba025m.png", "scene": "res://scene/single/truba025m.tscn"},
+		  {"name": "Craft GS труба 250", "batch": "GS", "sku": "c320303", "price": 1401, "diameter": "200 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-250", "texture": "res://sprites/single/truba025m.png", "scene": "res://scene/single/truba025m.tscn"},
+		  {"name": "Craft GS труба 250", "batch": "GS", "sku": "c320304", "price": 1723, "diameter": "250 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-250", "texture": "res://sprites/single/truba025m.png", "scene": "res://scene/single/truba025m.tscn"},
+		  
+		  {"name": "Craft GS труба 500", "batch": "GS", "sku": "c320201", "price": 1643, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-500", "texture": "res://sprites/single/truba05m.png", "scene": "res://scene/single/truba05m.tscn"},
+		  {"name": "Craft GS труба 500", "batch": "GS", "sku": "c320202", "price": 1875, "diameter": "150 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-500", "texture": "res://sprites/single/truba05m.png", "scene": "res://scene/single/truba05m.tscn"},
+		  {"name": "Craft GS труба 500", "batch": "GS", "sku": "c320203", "price": 2459, "diameter": "200 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-500", "texture": "res://sprites/single/truba05m.png", "scene": "res://scene/single/truba05m.tscn"},
+		  {"name": "Craft GS труба 500", "batch": "GS", "sku": "c320204", "price": 3046, "diameter": "250 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-500", "texture": "res://sprites/single/truba05m.png", "scene": "res://scene/single/truba05m.tscn"},
+ 
+		  {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320101", "price": 2875, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-1000", "texture": "res://sprites/single/truba1m.png", "scene": "res://scene/single/truba1m.tscn"},
+		  {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320102", "price": 3304, "diameter": "150 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-1000", "texture": "res://sprites/single/truba1m.png", "scene": "res://scene/single/truba1m.tscn"},
+		  {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320103", "price": 4377, "diameter": "200 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-1000", "texture": "res://sprites/single/truba1m.png", "scene": "res://scene/single/truba1m.tscn"},
+		  {"name": "Craft GS труба 1000", "batch": "GS", "sku": "c320104", "price": 5453, "diameter": "250 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/truba-1000", "texture": "res://sprites/single/truba1m.png", "scene": "res://scene/single/truba1m.tscn"},
+		  
+		  {"name": "Craft GS колено 30°", "batch": "GS", "sku": "c320601", "price": 1271, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-30", "texture": "res://sprites/single/koleno30.png", "scene": "res://scene/single/koleno30.tscn"},
+		  {"name": "Craft GS колено 30°", "batch": "GS", "sku": "c320602", "price": 1432, "diameter": "150 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-30", "texture": "res://sprites/single/koleno30.png", "scene": "res://scene/single/koleno30.tscn"},
+		  {"name": "Craft GS колено 30°", "batch": "GS", "sku": "c320603", "price": 2043, "diameter": "200 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-30", "texture": "res://sprites/single/koleno30.png", "scene": "res://scene/single/koleno30.tscn"},
+		  {"name": "Craft GS колено 30°", "batch": "GS", "sku": "c320604", "price": 2533, "diameter": "250 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-30", "texture": "res://sprites/single/koleno30.png", "scene": "res://scene/single/koleno30.tscn"},
+
+		  {"name": "Craft GS колено 45°", "batch": "GS", "sku": "c320701", "price": 1397, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-45", "texture": "res://sprites/single/koleno45.png", "scene": "res://scene/single/koleno45.tscn"},
+		  {"name": "Craft GS колено 45°", "batch": "GS", "sku": "c320702", "price": 1577, "diameter": "150 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-45", "texture": "res://sprites/single/koleno45.png", "scene": "res://scene/single/koleno45.tscn"},
+		  {"name": "Craft GS колено 45°", "batch": "GS", "sku": "c320703", "price": 2301, "diameter": "200 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-45", "texture": "res://sprites/single/koleno45.png", "scene": "res://scene/single/koleno45.tscn"},
+		  {"name": "Craft GS колено 45°", "batch": "GS", "sku": "c320704", "price": 2854, "diameter": "250 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-45", "texture": "res://sprites/single/koleno45.png", "scene": "res://scene/single/koleno45.tscn"},
+
+		  {"name": "Craft GS колено 90°", "batch": "GS", "sku": "c320801", "price": 1564, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-90", "texture": "res://sprites/single/koleno90.png", "scene": "res://scene/single/koleno90.tscn"},
+		  {"name": "Craft GS колено 90°", "batch": "GS", "sku": "c320802", "price": 2040, "diameter": "150 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-90", "texture": "res://sprites/single/koleno90.png", "scene": "res://scene/single/koleno90.tscn"},
+		  {"name": "Craft GS колено 90°", "batch": "GS", "sku": "c320803", "price": 2660, "diameter": "200 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-90", "texture": "res://sprites/single/koleno90.png", "scene": "res://scene/single/koleno90.tscn"},
+		  {"name": "Craft GS колено 90°", "batch": "GS", "sku": "c320804", "price": 3979, "diameter": "250 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/koleno-90", "texture": "res://sprites/single/koleno90.png", "scene": "res://scene/single/koleno90.tscn"},
+
+		  {"name": "Craft GS тройник 90°", "batch": "GS", "sku": "c321101", "price": 2144, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/troinik-90", "texture": "res://sprites/single/troinik90.png", "scene": "res://scene/single/troinik90.tscn"},
+		  {"name": "Craft GS тройник 90°", "batch": "GS", "sku": "c321102", "price": 2935, "diameter": "150 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/troinik-90", "texture": "res://sprites/single/troinik90.png", "scene": "res://scene/single/troinik90.tscn"},
+		  {"name": "Craft GS тройник 90°", "batch": "GS", "sku": "c321103", "price": 4228, "diameter": "200 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/troinik-90", "texture": "res://sprites/single/troinik90.png", "scene": "res://scene/single/troinik90.tscn"},
+		  {"name": "Craft GS тройник 90°", "batch": "GS", "sku": "c321104", "price": 5731, "diameter": "250 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/troinik-90", "texture": "res://sprites/single/troinik90.png", "scene": "res://scene/single/troinik90.tscn"},
+
+		  {"name": "Craft GS зонт", "batch": "GS", "sku": "c321403", "price": 1385, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/zont", "texture": "res://sprites/single/zont.png", "scene": "res://scene/single/zont.tscn"},
+		  {"name": "Craft GS зонт", "batch": "GS", "sku": "c321404", "price": 1576, "diameter": "150 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/zont", "texture": "res://sprites/single/zont.png", "scene": "res://scene/single/zont.tscn"},
+		  {"name": "Craft GS зонт", "batch": "GS", "sku": "c321405", "price": 2484, "diameter": "200 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/zont", "texture": "res://sprites/single/zont.png", "scene": "res://scene/single/zont.tscn"},
+		  {"name": "Craft GS зонт", "batch": "GS", "sku": "c321406", "price": 3495, "diameter": "250 мм","type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/zont", "texture": "res://sprites/single/zont.png", "scene": "res://scene/single/zont.tscn"}
+		],
+		"GS-25": [
+		  {"name": "Сэндвич 1 м", "batch": "GS-25", "sku": "GS25-001", "price": 1500, "diameter": "125 мм", "type": "sandvich", "link": "https://example.com/sandvich1m", "texture": "res://sprites/sandvich/sandvich1m.svg", "scene": "res://scene/sandvich/sandvich1m.tscn"},
+		  {"name": "Колено 90", "batch": "GS-25", "sku": "GS25-002", "price": 800, "diameter": "110 мм", "type": "sandvich", "link": "https://example.com/koleno90", "texture": "res://sprites/sandvich/sandvich_koleno90.svg", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"}
+		],
+		"GS-50": [
+		  {"name": "Craft GS-50 старт-сэндвич", "batch": "GS-50", "sku": "c340601", "price": 3157, "diameter": "130 мм", "is_start_sandvich": true, "link": "https://house.craft.ru/store/seriya-craft-gs-50/start-sandwich", "texture": "res://sprites/sandvich/start_sendvich.png", "scene": "res://scene/sandvich/start_sendvich.tscn"},
+		  {"name": "Craft GS-50 старт-сэндвич", "batch": "GS-50", "sku": "c340602", "price": 3517, "diameter": "150 мм", "is_start_sandvich": true, "link": "https://house.craft.ru/store/seriya-craft-gs-50/start-sandwich", "texture": "res://sprites/sandvich/start_sendvich.png", "scene": "res://scene/sandvich/start_sendvich.tscn"},
+		  {"name": "Craft GS-50 старт-сэндвич", "batch": "GS-50", "sku": "c340603", "price": 4511, "diameter": "200 мм", "is_start_sandvich": true, "link": "https://house.craft.ru/store/seriya-craft-gs-50/start-sandwich", "texture": "res://sprites/sandvich/start_sendvich.png", "scene": "res://scene/sandvich/start_sendvich.tscn"},
+		  {"name": "Craft GS-50 старт-сэндвич", "batch": "GS-50", "sku": "c340604", "price": 6747, "diameter": "250 мм", "is_start_sandvich": true, "link": "https://house.craft.ru/store/seriya-craft-gs-50/start-sandwich", "texture": "res://sprites/sandvich/start_sendvich.png", "scene": "res://scene/sandvich/start_sendvich.tscn"},
+
+		  {"name": "Craft GS-50 сэндвич 250", "batch": "GS-50", "sku": "c340301", "price": 2976, "diameter": "130 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-250", "texture": "res://sprites/sandvich/sandvich025m.png", "scene": "res://scene/sandvich/sandvich025m.tscn"},
+		  {"name": "Craft GS-50 сэндвич 250", "batch": "GS-50", "sku": "c340302", "price": 3274, "diameter": "150 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-250", "texture": "res://sprites/sandvich/sandvich025m.png", "scene": "res://scene/sandvich/sandvich025m.tscn"},
+		  {"name": "Craft GS-50 сэндвич 250", "batch": "GS-50", "sku": "c340303", "price": 4142, "diameter": "200 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-250", "texture": "res://sprites/sandvich/sandvich025m.png", "scene": "res://scene/sandvich/sandvich025m.tscn"},
+		  {"name": "Craft GS-50 сэндвич 250", "batch": "GS-50", "sku": "c340304", "price": 4980, "diameter": "250 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-250", "texture": "res://sprites/sandvich/sandvich025m.png", "scene": "res://scene/sandvich/sandvich025m.tscn"},
+
+		  {"name": "Craft GS-50 сэндвич 500", "batch": "GS-50", "sku": "c340201", "price": 4691, "diameter": "130 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-500", "texture": "res://sprites/sandvich/sandvich05.png", "scene": "res://scene/sandvich/sandvich05m.tscn"},
+		  {"name": "Craft GS-50 сэндвич 500", "batch": "GS-50", "sku": "c340202", "price": 5189, "diameter": "150 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-500", "texture": "res://sprites/sandvich/sandvich05.png", "scene": "res://scene/sandvich/sandvich05m.tscn"},
+		  {"name": "Craft GS-50 сэндвич 500", "batch": "GS-50", "sku": "c340203", "price": 6549, "diameter": "200 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-500", "texture": "res://sprites/sandvich/sandvich05.png", "scene": "res://scene/sandvich/sandvich05m.tscn"},
+		  {"name": "Craft GS-50 сэндвич 500", "batch": "GS-50", "sku": "c340204", "price": 7880, "diameter": "250 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-500", "texture": "res://sprites/sandvich/sandvich05.png", "scene": "res://scene/sandvich/sandvich05m.tscn"},
+
+		  {"name": "Craft GS-50 сэндвич 1000", "batch": "GS-50", "sku": "c340101", "price": 8240, "diameter": "130 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-1000", "texture": "res://sprites/sandvich/sandvich1m.png", "scene": "res://scene/sandvich/sandvich1m.tscn"},
+		  {"name": "Craft GS-50 сэндвич 1000", "batch": "GS-50", "sku": "c340102", "price": 9147, "diameter": "150 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-1000", "texture": "res://sprites/sandvich/sandvich1m.png", "scene": "res://scene/sandvich/sandvich1m.tscn"},
+		  {"name": "Craft GS-50 сэндвич 1000", "batch": "GS-50", "sku": "c340103", "price": 11525, "diameter": "200 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-1000", "texture": "res://sprites/sandvich/sandvich1m.png", "scene": "res://scene/sandvich/sandvich1m.tscn"},
+		  {"name": "Craft GS-50 сэндвич 1000", "batch": "GS-50", "sku": "c340104", "price": 13876, "diameter": "250 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-1000", "texture": "res://sprites/sandvich/sandvich1m.png", "scene": "res://scene/sandvich/sandvich1m.tscn"},
+
+		  {"name": "Craft GS-50 сэндвич-колено 30°", "batch": "GS-50", "sku": "c342501", "price": 4336, "diameter": "130 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-30", "texture": "res://sprites/sandvich/sandvich_koleno30.png", "scene": "res://scene/sandvich/sandvich_koleno30.tscn"},
+		  {"name": "Craft GS-50 сэндвич-колено 30°", "batch": "GS-50", "sku": "c342502", "price": 4779, "diameter": "150 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-30", "texture": "res://sprites/sandvich/sandvich_koleno30.png", "scene": "res://scene/sandvich/sandvich_koleno30.tscn"},
+		  {"name": "Craft GS-50 сэндвич-колено 30°", "batch": "GS-50", "sku": "c342503", "price": 6003, "diameter": "200 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-30", "texture": "res://sprites/sandvich/sandvich_koleno30.png", "scene": "res://scene/sandvich/sandvich_koleno30.tscn"},
+		  {"name": "Craft GS-50 сэндвич-колено 30°", "batch": "GS-50", "sku": "c342504", "price": 7485, "diameter": "250 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-30", "texture": "res://sprites/sandvich/sandvich_koleno30.png", "scene": "res://scene/sandvich/sandvich_koleno30.tscn"},
+
+		  {"name": "Craft GS-50 сэндвич-колено 45°", "batch": "GS-50", "sku": "c340701", "price": 4785, "diameter": "130 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-45", "texture": "res://sprites/sandvich/sandvich_koleno45.png", "scene": "res://scene/sandvich/sandvich_koleno45.tscn"},
+		  {"name": "Craft GS-50 сэндвич-колено 45°", "batch": "GS-50", "sku": "c340702", "price": 5344, "diameter": "150 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-45", "texture": "res://sprites/sandvich/sandvich_koleno45.png", "scene": "res://scene/sandvich/sandvich_koleno45.tscn"},
+		  {"name": "Craft GS-50 сэндвич-колено 45°", "batch": "GS-50", "sku": "c340703", "price": 6923, "diameter": "200 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-45", "texture": "res://sprites/sandvich/sandvich_koleno45.png", "scene": "res://scene/sandvich/sandvich_koleno45.tscn"},
+		  {"name": "Craft GS-50 сэндвич-колено 45°", "batch": "GS-50", "sku": "c340704", "price": 8882, "diameter": "250 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-45", "texture": "res://sprites/sandvich/sandvich_koleno45.png", "scene": "res://scene/sandvich/sandvich_koleno45.tscn"},
+
+		  {"name": "Craft GS-50 сэндвич-колено 90°", "batch": "GS-50", "sku": "c340801", "price": 6372, "diameter": "130 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-90", "texture": "res://sprites/sandvich/sandvich_koleno90.png", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"},
+		  {"name": "Craft GS-50 сэндвич-колено 90°", "batch": "GS-50", "sku": "c340802", "price": 7037, "diameter": "150 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-90", "texture": "res://sprites/sandvich/sandvich_koleno90.png", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"},
+		  {"name": "Craft GS-50 сэндвич-колено 90°", "batch": "GS-50", "sku": "c340803", "price": 9956, "diameter": "200 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-90", "texture": "res://sprites/sandvich/sandvich_koleno90.png", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"},
+		  {"name": "Craft GS-50 сэндвич-колено 90°", "batch": "GS-50", "sku": "c340804", "price": 12448, "diameter": "200 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-koleno-90", "texture": "res://sprites/sandvich/sandvich_koleno90.png", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"},
+
+		  {"name": "Craft GS-50 сэндвич-тройник 90°", "batch": "GS-50", "sku": "c341101", "price": 8280, "diameter": "130 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-troinik-90", "texture": "res://sprites/sandvich/sandvich_troinik90.png", "scene": "res://scene/sandvich/sandvich_troinik90.tscn"},
+		  {"name": "Craft GS-50 сэндвич-тройник 90°", "batch": "GS-50", "sku": "c341102", "price": 9477, "diameter": "150 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-troinik-90", "texture": "res://sprites/sandvich/sandvich_troinik90.png", "scene": "res://scene/sandvich/sandvich_troinik90.tscn"},
+		  {"name": "Craft GS-50 сэндвич-тройник 90°", "batch": "GS-50", "sku": "c341103", "price": 12877, "diameter": "200 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-troinik-90", "texture": "res://sprites/sandvich/sandvich_troinik90.png", "scene": "res://scene/sandvich/sandvich_troinik90.tscn"},
+		  {"name": "Craft GS-50 сэндвич-тройник 90°", "batch": "GS-50", "sku": "c341104", "price": 16889, "diameter": "250 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/sandwich-troinik-90", "texture": "res://sprites/sandvich/sandvich_troinik90.png", "scene": "res://scene/sandvich/sandvich_troinik90.tscn"},
+
+		  {"name": "Craft GS-50 оголовок с ветрозащитой", "batch": "GS-50", "sku": "c343503", "price": 4681, "diameter": "130 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/ogolovok-s-vetrozaschitoi", "texture": "res://sprites/sandvich/ogolovok_s_vetrozaschitoi.png", "scene": "res://scene/sandvich/ogolovok_s_vetrozaschitoi.tscn"},
+		  {"name": "Craft GS-50 оголовок с ветрозащитой", "batch": "GS-50", "sku": "c343504", "price": 5246, "diameter": "150 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/ogolovok-s-vetrozaschitoi", "texture": "res://sprites/sandvich/ogolovok_s_vetrozaschitoi.png", "scene": "res://scene/sandvich/ogolovok_s_vetrozaschitoi.tscn"},
+		  {"name": "Craft GS-50 оголовок с ветрозащитой", "batch": "GS-50", "sku": "c343505", "price": 6774, "diameter": "200 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/ogolovok-s-vetrozaschitoi", "texture": "res://sprites/sandvich/ogolovok_s_vetrozaschitoi.png", "scene": "res://scene/sandvich/ogolovok_s_vetrozaschitoi.tscn"},
+		  {"name": "Craft GS-50 оголовок с ветрозащитой", "batch": "GS-50", "sku": "c343506", "price": 9033, "diameter": "250 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/ogolovok-s-vetrozaschitoi", "texture": "res://sprites/sandvich/ogolovok_s_vetrozaschitoi.png", "scene": "res://scene/sandvich/ogolovok_s_vetrozaschitoi.tscn"},
+		  {"name": "Craft GS-50 оголовок с ветрозащитой", "batch": "GS-50", "sku": "c343507", "price": 13046, "diameter": "300 мм", "type": "sandvich", "link": "https://house.craft.ru/store/seriya-craft-gs-50/ogolovok-s-vetrozaschitoi", "texture": "res://sprites/sandvich/ogolovok_s_vetrozaschitoi.png", "scene": "res://scene/sandvich/ogolovok_s_vetrozaschitoi.tscn"}
+		],
+		"GS/HF": [
+		  {"name": "Кронштейн", "batch": "GS/HF", "sku": "GSHF-001", "price": 300, "diameter": "", "link": "https://example.com/kronshtein", "texture": "res://sprites/accessories/kronshtein.svg", "scene": "res://scene/accessories/kronshtein.tscn"},
+		  {"name": "Крышная разделка угловая", "batch": "GS/HF", "sku": "GSHF-002", "price": 450, "diameter": "130 мм", "link": "https://example.com/razdelka", "texture": "res://sprites/accessories/krishnaia_razdelka_uglovaya.svg", "scene": "res://scene/accessories/krishnaia_razdelka_uglovaya.tscn"}
+		]
+	  }
+	},
+	{
+	  "name": "Для печей, котлов и каминов",
+	  "single_series": "HF",
+	  "sandvich_series": ["HF-25", "HF-50"],
+	  "accessories_series": "GS/HF",
+	  "items": {
+		"HF": [
+		  {"name": "Адаптер", "batch": "HF", "sku": "HF-001", "price": 500, "diameter": "130 мм", "link": "https://example.com/adapter", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},
+		  {"name": "Труба 1 м", "batch": "HF", "sku": "HF-002", "price": 1000, "diameter": "150 мм", "link": "https://example.com/truba1m", "texture": "res://sprites/single/truba1m.svg", "scene": "res://scene/single/truba1m.tscn"},
+		  {"name": "Колено 45", "batch": "HF", "sku": "HF-003", "price": 600, "diameter": "200 мм", "link": "https://example.com/koleno45", "texture": "res://sprites/single/koleno45.svg", "scene": "res://scene/single/koleno45.tscn"}
+		],
+		"HF-50": [
+		  {"name": "Сэндвич 1 м", "batch": "HF-50", "sku": "HF25-001", "price": 1500, "diameter": "130 мм", "link": "https://example.com/sandvich1m", "texture": "res://sprites/sandvich/sandvich1m.svg", "scene": "res://scene/sandvich/sandvich1m.tscn"},
+		  {"name": "Колено 90", "batch": "HF-50", "sku": "HF25-002", "price": 800, "diameter": "150 мм", "link": "https://example.com/koleno90", "texture": "res://sprites/sandvich/sandvich_koleno90.svg", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"}
+		],
+		"HF-50B": [
+		  {"name": "Сэндвич 0.5 м", "batch": "HF-50B", "sku": "HF50-001", "price": 1200, "diameter": "130 мм", "link": "https://example.com/sandvich05m", "texture": "res://sprites/sandvich/sandvich05m.svg", "scene": "res://scene/sandvich/sandvich05m.tscn"}
+		],
+		"GS/HF": [
+		  {"name": "Кронштейн", "batch": "GS/HF", "sku": "GSHF-001", "price": 300, "diameter": "", "link": "https://example.com/kronshtein", "texture": "res://sprites/accessories/kronshtein.svg", "scene": "res://scene/accessories/kronshtein.tscn"},
+		  {"name": "Крышная разделка угловая", "batch": "GS/HF", "sku": "GSHF-002", "price": 450, "diameter": "130 мм", "link": "https://example.com/razdelka", "texture": "res://sprites/accessories/krishnaia_razdelka_uglovaya.svg", "scene": "res://scene/accessories/krishnaia_razdelka_uglovaya.tscn"}
+		]
+	  }
+	}
   ]
 }

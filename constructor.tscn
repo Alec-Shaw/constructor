@@ -187,3 +187,27 @@ offset_top = 21.0
 offset_right = 392.0
 offset_bottom = 48.0
 mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 461.0
+offset_top = 58.0
+offset_right = 726.0
+offset_bottom = 158.0
+
+[node name="RotateButton" type="Button" parent="Panel"]
+z_index = 10
+layout_mode = 0
+offset_left = 13.0
+offset_top = 18.0
+offset_right = 88.0
+offset_bottom = 49.0
+text = "Rotate"
+
+[node name="DeleteButton" type="Button" parent="Panel"]
+z_index = 10
+layout_mode = 0
+offset_left = 111.0
+offset_top = 19.0
+offset_right = 214.0
+offset_bottom = 50.0
+text = "Delete"

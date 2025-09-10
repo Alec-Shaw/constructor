@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1fexc5roso66"
-path="res://.godot/imported/sandvich_troinik90.svg-8a3805fd65abbcc7900516f9ae55c1b8.ctex"
+uid="uid://b54sbagvb4wmc"
+path="res://.godot/imported/sandvich05m.png-7f9ce3ad25defee22ae7504f018b0357.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sandvich/sandvich_troinik90.svg"
-dest_files=["res://.godot/imported/sandvich_troinik90.svg-8a3805fd65abbcc7900516f9ae55c1b8.ctex"]
+source_file="res://sprites/sandvich/sandvich05m.png"
+dest_files=["res://.godot/imported/sandvich05m.png-7f9ce3ad25defee22ae7504f018b0357.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

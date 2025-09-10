@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0bsw3l0y3ey0"]
+[gd_scene load_steps=3 format=3 uid="uid://dppu2101bpd6i"]
 
-[ext_resource type="Texture2D" uid="uid://b0gyescsk7weq" path="res://sprites/single/koleno45.png" id="1_emr5q"]
+[ext_resource type="Texture2D" uid="uid://bk48k45xc2t81" path="res://sprites/single/koleno30.png" id="1_dsj6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emr5q"]
 resource_local_to_scene = true
 size = Vector2(62.0001, 66.0001)
 
-[node name="koleno45" type="Node2D"]
+[node name="koleno30" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_emr5q")
+texture = ExtResource("1_dsj6w")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(7.62939e-06, 7.62939e-06)

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://binnrs7wfb5t6"]
-
-[ext_resource type="Texture2D" uid="uid://cuoeng75lsqgi" path="res://sprites/sandvich/sandvich_ogolovok.svg" id="1_6xi18"]
-
-[node name="Fitting1" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_6xi18")

@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0bsw3l0y3ey0"]
+[gd_scene load_steps=5 format=3 uid="uid://c0bsw3l0y3ey0"]
 
 [ext_resource type="Texture2D" uid="uid://bbkwtajxlox2m" path="res://sprites/single/adapter.png" id="1_w1xty"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1xty"]
 resource_local_to_scene = true
-size = Vector2(45.325, 24)
+size = Vector2(48, 44)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1xty"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muoyn"]
+radius = 1.41421
 
 [node name="adapter" type="Node2D"]
 
@@ -17,6 +23,17 @@ region_rect = Rect2(70, 79, 70, 79)
 position = Vector2(7.62939e-06, 7.62939e-06)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-6.67572e-06, 11)
+position = Vector2(-6.67572e-06, -7.12275e-06)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_w1xty")
+
+[node name="ConnectionIn" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionIn"]
+shape = SubResource("CircleShape2D_w1xty")
+
+[node name="ConnectionOut" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionOut"]
+position = Vector2(0, -5.485)
+shape = SubResource("CircleShape2D_muoyn")

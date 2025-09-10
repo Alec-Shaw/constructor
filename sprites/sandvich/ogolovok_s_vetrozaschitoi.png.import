@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjhu6jb7p0syq"
-path="res://.godot/imported/start_sendvich.svg-ccffb1effb80ba7896af1706724b69e0.ctex"
+uid="uid://gvlfy3n5vdx2"
+path="res://.godot/imported/ogolovok_s_vetrozaschitoi.png-7611b10f997c0824cb5fc9297f602dce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sandvich/start_sendvich.svg"
-dest_files=["res://.godot/imported/start_sendvich.svg-ccffb1effb80ba7896af1706724b69e0.ctex"]
+source_file="res://sprites/sandvich/ogolovok_s_vetrozaschitoi.png"
+dest_files=["res://.godot/imported/ogolovok_s_vetrozaschitoi.png-7611b10f997c0824cb5fc9297f602dce.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

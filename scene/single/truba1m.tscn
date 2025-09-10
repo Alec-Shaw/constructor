@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0bsw3l0y3ey0"]
+[gd_scene load_steps=5 format=3 uid="uid://c0bsw3l0y3ey0"]
 
 [ext_resource type="Texture2D" uid="uid://b81k750nv8apk" path="res://sprites/single/truba1m.png" id="1_tnf14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnf14"]
-size = Vector2(45, 153)
+size = Vector2(45, 212)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tnf14"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fcp3"]
+radius = 2.23607
 
 [node name="adapter" type="Node2D"]
 
@@ -14,5 +20,16 @@ texture = ExtResource("1_tnf14")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
-position = Vector2(0.5, 9.5)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_tnf14")
+
+[node name="ConnectionIn" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionIn"]
+shape = SubResource("CircleShape2D_tnf14")
+
+[node name="ConnectionOut" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionOut"]
+position = Vector2(1, -88)
+shape = SubResource("CircleShape2D_5fcp3")

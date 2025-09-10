@@ -5,11 +5,11 @@ extends Node2D
 @onready var accessories_list_elements = $Tabs/Комплектующие
 @onready var display_sprite = $DisplaySprite
 @onready var build_area = $BuildArea
-@onready var sphere_option = $SphereOptionButton  # For назначение
-@onready var single_series_option = $SingleSeriesOptionButton  # For single items series
-@onready var sandvich_series_option = $SandvichSeriesOptionButton  # For sandvich items series
-@onready var accessories_series_option = $AccessoriesSeriesOptionButton  # For accessories items series
-@onready var diameter_option = $DiameterOptionButton  # For diameter filter
+@onready var sphere_option = $SphereOptionButton  # Назначение
+@onready var single_series_option = $SingleSeriesOptionButton  # Серия одностенных
+@onready var sandvich_series_option = $SandvichSeriesOptionButton  # Серия утепленных
+@onready var accessories_series_option = $AccessoriesSeriesOptionButton  # Серия комплектующих
+@onready var diameter_option = $DiameterOptionButton  # Диаметр (обязательный)
 
 var data = {}  # Loaded JSON data
 var single_items = []
@@ -17,7 +17,7 @@ var sandvich_items = []
 var accessories_items = []
 
 func _ready():
-	# Load JSON data
+	# Load JSON data from data.json
 	var file = FileAccess.open("res://data/data.json", FileAccess.READ)
 	if file:
 		var json_text = file.get_as_text()
@@ -44,8 +44,8 @@ func populate_sphere_option():
 	for sphere in data["spheres"]:
 		sphere_option.add_item(sphere["name"])
 	if sphere_option.get_item_count() > 0:
-		sphere_option.select(0)  # Select first sphere by default
-		_on_sphere_selected(0)  # Trigger initial update
+		sphere_option.select(0)
+		_on_sphere_selected(0)
 
 func _on_sphere_selected(index: int):
 	var selected_sphere = sphere_option.get_item_text(index)
@@ -70,22 +70,42 @@ func _on_sphere_selected(index: int):
 			break
 
 func _on_series_selected(index: int):
-	# This will be triggered for any series OptionButton; we need to update based on the current selection
+	_update_diameter_options()
+	_on_diameter_selected(diameter_option.selected)  # Trigger update if diameter is selected
+
+func _update_diameter_options():
 	var selected_sphere = sphere_option.get_item_text(sphere_option.selected)
-	diameter_option.clear()  # Clear diameter options when series changes
+	diameter_option.clear()
 	var diameters = {}
 	for sphere in data["spheres"]:
 		if sphere["name"] == selected_sphere:
-			for series in [sphere["single_series"], sphere["accessories_series"]] + sphere["sandvich_series"]:
+			# Collect diameters from single, sandvich, and accessories
+			var single_series = sphere["single_series"]
+			if single_series in sphere["items"]:
+				for item in sphere["items"][single_series]:
+					if item["diameter"] != "" and item["diameter"] != null:
+						diameters[item["diameter"]] = true
+			
+			var sandvich_series = [sandvich_series_option.get_item_text(sandvich_series_option.selected)]
+			for series in sandvich_series:
 				if series in sphere["items"]:
 					for item in sphere["items"][series]:
+						if item["diameter"] != "" and item["diameter"] != null:
+							diameters[item["diameter"]] = true
+			
+			var accessories_series = sphere["accessories_series"]
+			if accessories_series in sphere["items"]:
+				for item in sphere["items"][accessories_series]:
+					if item["diameter"] != "" and item["diameter"] != null:
 						diameters[item["diameter"]] = true
 			break
 	for diameter in diameters.keys():
 		diameter_option.add_item(diameter)
 	if diameter_option.get_item_count() > 0:
-		diameter_option.select(0)  # Select first diameter by default (mandatory)
-		_on_diameter_selected(0)  # Trigger update
+		diameter_option.select(0)  # Select first diameter (mandatory)
+		_on_diameter_selected(0)
+	else:
+		print("No diameters available for selected series")
 
 func _on_diameter_selected(index: int):
 	if index < 0 or index >= diameter_option.get_item_count():
@@ -136,10 +156,10 @@ func update_item_lists(sphere_name: String, diameter: String):
 				sandvich_list_elements.set_item_tooltip(index, item["name"])
 				print("Added to Утепленные: ", item["name"])
 
-			# Filter accessories items
+			# Filter accessories items (include items without diameter)
 			if accessories_series in sphere["items"]:
 				for item in sphere["items"][accessories_series]:
-					if item["diameter"] == diameter:
+					if item["diameter"] == "" or item["diameter"] == diameter:
 						accessories_items.append(item)
 			for item in accessories_items:
 				accessories_list_elements.add_item("")

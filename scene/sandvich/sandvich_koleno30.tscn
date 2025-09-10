@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3jfftwvf3bin"]
+
+[ext_resource type="Texture2D" uid="uid://dbtf75xs6lxmm" path="res://sprites/sandvich/sandvich_koleno30.png" id="1_ddnms"]
+
+[node name="sandvich_koleno30" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ddnms")

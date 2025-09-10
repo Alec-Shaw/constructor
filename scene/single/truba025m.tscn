@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0bsw3l0y3ey0"]
 
-[ext_resource type="Texture2D" uid="uid://bcgkpamtk3w7g" path="res://sprites/single/truba025m.svg" id="1_0ancn"]
+[ext_resource type="Texture2D" uid="uid://c8gjismymhbej" path="res://sprites/single/truba025m.png" id="1_0ancn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ancn"]
 resource_local_to_scene = true
@@ -10,7 +10,6 @@ size = Vector2(46, 86.0001)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.999985, 0)
-scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_0ancn")
 
 [node name="Area2D" type="Area2D" parent="."]

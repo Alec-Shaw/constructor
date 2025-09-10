@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0bsw3l0y3ey0"]
 
-[ext_resource type="Texture2D" uid="uid://c1ngbsb366ygc" path="res://sprites/single/koleno90.svg" id="1_sk7u7"]
+[ext_resource type="Texture2D" uid="uid://ir337hrdkstb" path="res://sprites/single/koleno90.png" id="1_sk7u7"]
 
 [node name="adapter" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(249, 230)
-scale = Vector2(0.3, 0.3)
+position = Vector2(1.52588e-05, 2)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_sk7u7")
