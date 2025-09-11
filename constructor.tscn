@@ -55,13 +55,12 @@ border_color = Color(1, 1, 1, 1)
 bg_color = Color(1, 1, 1, 0.905882)
 
 [node name="Root" type="Node2D"]
-position = Vector2(20, 20)
 script = ExtResource("1_wrl6d")
 
 [node name="Tabs" type="TabContainer" parent="."]
-offset_left = 3.0
+offset_left = -440.0
 offset_top = 121.0
-offset_right = 404.0
+offset_right = -39.0
 offset_bottom = 900.0
 theme = SubResource("Theme_esx0d")
 theme_override_constants/outline_size = 0
@@ -114,15 +113,14 @@ metadata/_tab_index = 2
 
 [node name="DisplaySprite" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(250.13, 659.24)
 scale = Vector2(0.1, 0.1)
 
 [node name="BuildAreaBackground" type="ColorRect" parent="."]
 z_index = -1
 custom_minimum_size = Vector2(1266, 851)
-offset_left = 450.0
+offset_left = 7.0
 offset_top = 50.0
-offset_right = 1716.0
+offset_right = 1273.0
 offset_bottom = 901.0
 mouse_filter = 2
 color = Color(1, 1, 0.988235, 1)
@@ -133,68 +131,68 @@ position = Vector2(625, 709)
 texture = ExtResource("4_w7shj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(891, 503)
+position = Vector2(444, 470)
 script = ExtResource("6_tc3gk")
 
 [node name="BuildArea" type="Panel" parent="."]
 z_index = 4
-custom_minimum_size = Vector2(1266, 851)
-offset_left = 450.0
+custom_minimum_size = Vector2(1264, 851)
+offset_left = 7.0
 offset_top = 50.0
-offset_right = 1716.0
+offset_right = 1271.0
 offset_bottom = 901.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tc3gk")
 script = ExtResource("4_pw5wm")
 
 [node name="SphereOptionButton" type="OptionButton" parent="."]
-offset_left = 17.0
+offset_left = -426.0
 offset_top = 20.0
-offset_right = 297.0
+offset_right = -146.0
 offset_bottom = 51.0
 mouse_filter = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 14.0
+offset_left = -429.0
 offset_top = -12.0
-offset_right = 244.0
+offset_right = -199.0
 offset_bottom = 13.0
 text = "Выбери сферу применения"
 
 [node name="SingleSeriesOptionButton" type="OptionButton" parent="."]
-offset_left = 16.0
+offset_left = -427.0
 offset_top = 65.0
-offset_right = 140.0
+offset_right = -303.0
 offset_bottom = 89.0
 mouse_filter = 1
 
 [node name="SandvichSeriesOptionButton" type="OptionButton" parent="."]
-offset_left = 167.0
+offset_left = -276.0
 offset_top = 63.0
-offset_right = 280.0
+offset_right = -163.0
 offset_bottom = 88.0
 mouse_filter = 1
 
 [node name="AccessoriesSeriesOptionButton" type="OptionButton" parent="."]
-offset_left = 297.0
+offset_left = -146.0
 offset_top = 68.0
-offset_right = 412.0
+offset_right = -31.0
 offset_bottom = 88.0
 mouse_filter = 1
 
 [node name="DiameterOptionButton" type="OptionButton" parent="."]
-offset_left = 316.0
+offset_left = -127.0
 offset_top = 21.0
-offset_right = 392.0
+offset_right = -51.0
 offset_bottom = 48.0
 mouse_filter = 1
 
-[node name="Panel" type="Panel" parent="."]
-offset_left = 461.0
-offset_top = 58.0
-offset_right = 726.0
-offset_bottom = 158.0
+[node name="ControlPanel" type="Panel" parent="."]
+offset_left = 557.0
+offset_top = 50.0
+offset_right = 757.0
+offset_bottom = 150.0
 
-[node name="RotateButton" type="Button" parent="Panel"]
+[node name="RotateButton" type="Button" parent="ControlPanel"]
 z_index = 10
 layout_mode = 0
 offset_left = 13.0
@@ -203,11 +201,11 @@ offset_right = 88.0
 offset_bottom = 49.0
 text = "Rotate"
 
-[node name="DeleteButton" type="Button" parent="Panel"]
+[node name="DeleteButton" type="Button" parent="ControlPanel"]
 z_index = 10
 layout_mode = 0
-offset_left = 111.0
+offset_left = 98.0
 offset_top = 19.0
-offset_right = 214.0
+offset_right = 185.0
 offset_bottom = 50.0
 text = "Delete"
