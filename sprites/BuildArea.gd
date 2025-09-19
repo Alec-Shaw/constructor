@@ -3,10 +3,12 @@ extends Panel
 var selected_node = null  # Узел, который сейчас перемещается
 var offset = Vector2.ZERO  # Смещение для точного перемещения
 var min_size = Vector2(1264, 851)  # Ваш новый минимальный размер
-var rotation_angles = [30, 45, 90, 135, -90, 0]  # Углы вращения
+var rotation_angles = [30, 45, 90, 135, 0]  # Углы вращения
 var current_rotation_index = 0  # Индекс текущего угла для выбранного элемента
 var control_panel = null  # Ссылка на ControlPanel
 var is_dragging = false  # Флаг для отслеживания перетаскивания
+var highlight_color = Color(1, 1, 0, 0.5)  # Жёлтый полупрозрачный цвет для подсветки
+var normal_color = Color(1, 1, 1, 1)  # Обычный белый цвет
 
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS  # Пропускаем события мыши к дочерним узлам
@@ -49,7 +51,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	print("Drop в BuildArea, позиция: ", at_position, " данные: ", data)
 	if ResourceLoader.exists(data["scene"]):
 		var scene = load(data["scene"]).instantiate()
-		var grid_size = 32
+		var grid_size = 5
 		var new_pos = at_position
 		# Расширение поля вниз, если new_pos.y < 0
 		var expand_amount = 0
@@ -77,6 +79,12 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		)
 		scene.z_index = 1  # Выше фона
 		add_child(scene)
+		# Подключение Area2D для прилипания
+		var connection_in = scene.get_node_or_null("ConnectionIn")
+		var connection_out = scene.get_node_or_null("ConnectionOut")
+		if connection_in and connection_out:
+			connection_in.area_entered.connect(_on_area_entered)
+			connection_out.area_entered.connect(_on_area_entered)
 		# Добавляем метаданные для прилипания (если нет)
 		var metadata = scene.get_meta("metadata", {})
 		metadata["type"] = data.get("type", "unknown")
@@ -87,12 +95,60 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	else:
 		print("Ошибка: Сцена не найдена: ", data["scene"])
 
+func _on_area_entered(area: Area2D):
+	if selected_node and is_dragging:
+		var other_node = area.get_parent()
+		if other_node != selected_node:
+			var selected_metadata = selected_node.get_meta("metadata", {})
+			var other_metadata = other_node.get_meta("metadata", {})
+			if _can_snap(selected_metadata, other_metadata, area.name):
+				var snap_depth = 5.0  # Глубина прилипания в пикселях
+				var distance = selected_node.global_position.distance_to(area.global_position)
+				if distance < snap_depth:
+					var snap_direction = (area.global_position - selected_node.global_position).normalized()
+					var snap_offset = snap_direction * (snap_depth - distance)
+					selected_node.position += snap_offset
+					print("Прилипание на глубину: ", distance)
+				else:
+					print("Прилипание не достигнуто: расстояние ", distance, " > ", snap_depth)
+			else:
+				print("Прилипание не возможно: типы не совпадают")
+
+func _can_snap(selected_metadata, other_metadata, area_name: String) -> bool:
+	var selected_type = selected_metadata.get("type", "unknown")
+	var other_type = other_metadata.get("type", "unknown")
+	var is_selected_start = selected_metadata.get("is_start_sandvich", false)
+	var is_other_start = other_metadata.get("is_start_sandvich", false)
+	
+	# Одностенные с одностенными
+	if selected_type == "single" and other_type == "single":
+		return true
+	
+	# Утепленные с утепленными
+	if selected_type == "sandvich" and other_type == "sandvich":
+		return true
+	
+	# Старт-сэндвич входом к одностенному
+	if is_selected_start and other_type == "single" and area_name == "ConnectionIn":
+		return true
+	
+	# Одностенный выходом к входу старт-сэндвич
+	if selected_type == "single" and is_other_start and area_name == "ConnectionOut":
+		return true
+	
+	return false
+
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		var local_pos = get_local_mouse_position()
-		if event.pressed and get_rect().has_point(local_pos):  # Проверяем, что клик внутри BuildArea
+		if event.pressed and get_rect().has_point(local_pos):  # Проверяем клик внутри текущего размера BuildArea
 			print("Клик мыши в BuildArea на позиции: ", local_pos)
 			print("Текущие дети: ", get_children())
+			# Сброс подсветки предыдущего элемента
+			if selected_node:
+				var sprite = selected_node.get_node_or_null("Sprite2D")
+				if sprite:
+					sprite.modulate = normal_color
 			selected_node = null
 			for child in get_children():
 				var area = child.get_node_or_null("Area2D")
@@ -108,6 +164,10 @@ func _input(event):
 							selected_node = child
 							offset = local_pos - child.position
 							is_dragging = true
+							# Подсветка выбранного элемента
+							var sprite = selected_node.get_node_or_null("Sprite2D")
+							if sprite:
+								sprite.modulate = highlight_color
 							print("Выбран узел: ", child.name, " с offset: ", offset)
 							break
 				var sprite = child.get_node_or_null("Sprite2D")
@@ -121,11 +181,15 @@ func _input(event):
 						selected_node = child
 						offset = local_pos - child.position
 						is_dragging = true
+						# Подсветка выбранного элемента
+						var selected_sprite = selected_node.get_node_or_null("Sprite2D")
+						if selected_sprite:
+							selected_sprite.modulate = highlight_color
 						print("Выбран узел: ", child.name, " с offset: ", offset)
 						break
 		else:
 			if is_dragging and selected_node:
-				var grid_size = 32
+				var grid_size = 5
 				var new_pos = local_pos - offset
 				new_pos.x = clamp(new_pos.x, 0, size.x - grid_size)
 				new_pos.y = clamp(new_pos.y, 0, size.y - grid_size)
@@ -135,30 +199,35 @@ func _input(event):
 				)
 				print("Элемент размещён: ", selected_node.name, " в позиции: ", selected_node.position)
 			is_dragging = false
-			if not any_child_contains_point(local_pos) and get_rect().has_point(local_pos):  # Проверяем клик внутри BuildArea
+			if not any_child_contains_point(local_pos) and get_rect().has_point(local_pos):
+				# Сброс подсветки при деселекте
+				if selected_node:
+					var sprite = selected_node.get_node_or_null("Sprite2D")
+					if sprite:
+						sprite.modulate = normal_color
 				selected_node = null
 				print("Клик вне узла, selected_node сброшен")
 			else:
 				print("Кнопка отпущена, selected_node сохранён")
 	elif event is InputEventMouseMotion and is_dragging and selected_node:
-		var grid_size = 32
+		var grid_size = 5
 		var local_pos = get_local_mouse_position()
 		var new_pos = local_pos - offset
 		# Расширение поля вниз, если new_pos.y < 0
-		var expand_amount = 0
+		var expand_amount_y = 0
 		if new_pos.y < 0:
-			expand_amount = abs(new_pos.y) + grid_size
-			size.y += expand_amount
+			expand_amount_y = abs(new_pos.y) + grid_size
+			size.y += expand_amount_y
 			for child in get_children():
-				child.position.y += expand_amount
+				child.position.y += expand_amount_y
 			var background = get_parent().get_node_or_null("BuildAreaBackground")
 			if background:
 				background.size.y = size.y
 				var furnace = background.get_node_or_null("FurnaceSprite")
 				if furnace:
-					furnace.position.y += expand_amount
-			print("Расширено BuildArea вниз на ", expand_amount)
-			new_pos.y = expand_amount + new_pos.y
+					furnace.position.y += expand_amount_y
+			print("Расширено BuildArea вниз на ", expand_amount_y)
+			new_pos.y = expand_amount_y + new_pos.y
 		# Ограничение позиции внутри границ BuildArea
 		new_pos.x = clamp(new_pos.x, 0, size.x - grid_size)
 		new_pos.y = clamp(new_pos.y, 0, size.y - grid_size)

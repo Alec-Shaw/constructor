@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0bsw3l0y3ey0"]
+[gd_scene load_steps=7 format=3 uid="uid://c0bsw3l0y3ey0"]
 
-[ext_resource type="Texture2D" uid="uid://b81k750nv8apk" path="res://sprites/single/truba1m.png" id="1_tnf14"]
+[ext_resource type="Texture2D" uid="uid://bnadudgjh4oy2" path="res://sprites/single/truba1m1.png" id="1_si5mc"]
+[ext_resource type="Texture2D" uid="uid://dm7igtfdvjvka" path="res://sprites/single/truba1m3.png" id="2_uxt0a"]
+[ext_resource type="Texture2D" uid="uid://hnve0owjh4uc" path="res://sprites/single/truba1m2.png" id="3_jwxil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnf14"]
-size = Vector2(45, 212)
+size = Vector2(90, 414)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnf14"]
 radius = 1.0
@@ -11,25 +13,35 @@ radius = 1.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_5fcp3"]
 radius = 2.23607
 
-[node name="adapter" type="Node2D"]
+[node name="truba1m" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_tnf14")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_si5mc")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 z_index = 1
-position = Vector2(0.5, 0)
+position = Vector2(-1, 17)
 shape = SubResource("RectangleShape2D_tnf14")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 208)
+texture = ExtResource("2_uxt0a")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -208)
+texture = ExtResource("3_jwxil")
 
 [node name="ConnectionIn" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionIn"]
+position = Vector2(0, 111)
 shape = SubResource("CircleShape2D_tnf14")
 
 [node name="ConnectionOut" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionOut"]
-position = Vector2(1, -88)
+position = Vector2(0, -94)
 shape = SubResource("CircleShape2D_5fcp3")

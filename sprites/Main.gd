@@ -10,11 +10,18 @@ extends Node2D
 @onready var sandvich_series_option = $SandvichSeriesOptionButton  # Серия утепленных
 @onready var accessories_series_option = $AccessoriesSeriesOptionButton  # Серия комплектующих
 @onready var diameter_option = $DiameterOptionButton  # Диаметр (обязательный)
+@onready var furnace_sprite = $BuildAreaBackground/FurnaceSprite  # Печь
 
 var data = {}  # Loaded JSON data
 var single_items = []
 var sandvich_items = []
 var accessories_items = []
+
+# Словарь текстур печей для каждой сферы (замените на ваши реальные пути)
+var furnace_textures = {
+	"Для газовых котлов и колонок": "res://sprites/base.png",  # Печь 1
+	"Для печей, котлов и каминов": "res://sprites/atmo.png"  # Печь 2 
+}
 
 func _ready():
 	# Load JSON data from data.json
@@ -34,9 +41,9 @@ func _ready():
 	
 	# Connect signals
 	sphere_option.item_selected.connect(_on_sphere_selected)
-	single_series_option.item_selected.connect(_on_series_selected)
-	sandvich_series_option.item_selected.connect(_on_series_selected)
-	accessories_series_option.item_selected.connect(_on_series_selected)
+	single_series_option.item_selected.connect(_on_single_series_selected)
+	sandvich_series_option.item_selected.connect(_on_sandvich_series_selected)
+	accessories_series_option.item_selected.connect(_on_accessories_series_selected)
 	diameter_option.item_selected.connect(_on_diameter_selected)
 
 func populate_sphere_option():
@@ -49,6 +56,12 @@ func populate_sphere_option():
 
 func _on_sphere_selected(index: int):
 	var selected_sphere = sphere_option.get_item_text(index)
+	# Update furnace texture based on selected sphere
+	if furnace_sprite and selected_sphere in furnace_textures and ResourceLoader.exists(furnace_textures[selected_sphere]):
+		furnace_sprite.texture = load(furnace_textures[selected_sphere])
+		print("Печь изменена на: ", selected_sphere)
+	else:
+		print("Текстура печи не найдена для: ", selected_sphere)
 	# Dynamically update series options
 	for sphere in data["spheres"]:
 		if sphere["name"] == selected_sphere:
@@ -72,6 +85,15 @@ func _on_sphere_selected(index: int):
 func _on_series_selected(index: int):
 	_update_diameter_options()
 	_on_diameter_selected(diameter_option.selected)  # Trigger update if diameter is selected
+
+func _on_single_series_selected(index: int):
+	_on_series_selected(index)
+
+func _on_sandvich_series_selected(index: int):
+	_on_series_selected(index)
+
+func _on_accessories_series_selected(index: int):
+	_on_series_selected(index)
 
 func _update_diameter_options():
 	var selected_sphere = sphere_option.get_item_text(sphere_option.selected)

@@ -1,9 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0bsw3l0y3ey0"]
+[gd_scene load_steps=5 format=3 uid="uid://c0bsw3l0y3ey0"]
 
 [ext_resource type="Texture2D" uid="uid://bjxjot8gabxvt" path="res://sprites/single/truba05m.png" id="1_ar2q3"]
 
-[node name="adapter" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ar2q3"]
+resource_local_to_scene = true
+size = Vector2(48, 43)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hh5je"]
+radius = 8.06226
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fy1gk"]
+radius = 8.06226
+
+[node name="truba05m" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2.99998, 1)
 texture = ExtResource("1_ar2q3")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(7.62939e-06, 7.62939e-06)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-6.67572e-06, -0.500008)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_ar2q3")
+
+[node name="ConnectionIn" type="Area2D" parent="."]
+position = Vector2(33, -38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionIn"]
+position = Vector2(-33, 29)
+shape = SubResource("CircleShape2D_hh5je")
+
+[node name="ConnectionOut" type="Area2D" parent="."]
+position = Vector2(0, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionOut"]
+shape = SubResource("CircleShape2D_fy1gk")
