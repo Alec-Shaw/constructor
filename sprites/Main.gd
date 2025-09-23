@@ -10,18 +10,14 @@ extends Node2D
 @onready var sandvich_series_option = $SandvichSeriesOptionButton  # Серия утепленных
 @onready var accessories_series_option = $AccessoriesSeriesOptionButton  # Серия комплектующих
 @onready var diameter_option = $DiameterOptionButton  # Диаметр (обязательный)
-@onready var furnace_sprite = $BuildAreaBackground/FurnaceSprite  # Печь
+@onready var cost_panel = $CostPanel  # Новая панель для стоимости (VBoxContainer)
 
 var data = {}  # Loaded JSON data
 var single_items = []
 var sandvich_items = []
 var accessories_items = []
-
-# Словарь текстур печей для каждой сферы (замените на ваши реальные пути)
-var furnace_textures = {
-	"Для газовых котлов и колонок": "res://sprites/base.png",  # Печь 1
-	"Для печей, котлов и каминов": "res://sprites/atmo.png"  # Печь 2 
-}
+var added_elements = {}  # Словарь добавленных элементов по sku: {sku: {item, quantity, total_price}}
+var total_cost = 0.0  # Итоговая стоимость
 
 func _ready():
 	# Load JSON data from data.json
@@ -45,6 +41,103 @@ func _ready():
 	sandvich_series_option.item_selected.connect(_on_sandvich_series_selected)
 	accessories_series_option.item_selected.connect(_on_accessories_series_selected)
 	diameter_option.item_selected.connect(_on_diameter_selected)
+	
+	# Connect to BuildArea signal for element addition
+	build_area.element_added.connect(update_cost_list)
+	build_area.element_removed.connect(remove_element)
+
+func update_cost_list(item: Dictionary):
+	var sku = item["sku"]
+	if sku in added_elements:
+		added_elements[sku]["quantity"] += 1
+		added_elements[sku]["total_price"] = added_elements[sku]["item"]["price"] * added_elements[sku]["quantity"]
+	else:
+		added_elements[sku] = {
+			"item": item,
+			"quantity": 1,
+			"total_price": item["price"]
+		}
+	total_cost = 0.0
+	for entry in added_elements.values():
+		total_cost += entry["total_price"]
+	update_cost_panel()
+
+func remove_element(sku: String):
+	if sku in added_elements:
+		added_elements[sku]["quantity"] -= 1
+		if added_elements[sku]["quantity"] > 0:
+			added_elements[sku]["total_price"] = added_elements[sku]["item"]["price"] * added_elements[sku]["quantity"]
+		else:
+			added_elements.erase(sku)
+	total_cost = 0.0
+	for entry in added_elements.values():
+		total_cost += entry["total_price"]
+	update_cost_panel()
+
+func update_cost_panel():
+	# Удаляем все дочерние узлы
+	for child in cost_panel.get_children():
+		child.queue_free()
+	
+	# Добавляем элементы с форматированием
+	for entry in added_elements.values():
+		var hbox = HBoxContainer.new()
+		hbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		hbox.add_theme_constant_override("separation", 10)  # Отступ между элементами в строке
+		
+		# Изображение
+		var texture_rect = TextureRect.new()
+		var icon = load(entry["item"]["texture"])
+		texture_rect.texture = icon
+		texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		texture_rect.size = Vector2(32, 32)
+		texture_rect.add_theme_constant_override("margin_right", 10)  # Отступ справа от изображения
+		hbox.add_child(texture_rect)
+		
+		# Название
+		var name_label = Label.new()
+		name_label.text = entry["item"]["name"]
+		name_label.add_theme_font_size_override("font_size", 14)  # Увеличиваем размер шрифта
+		name_label.mouse_filter = Control.MOUSE_FILTER_STOP
+		name_label.connect("gui_input", func(event): _on_name_clicked(event, entry["item"]["link"]))
+		hbox.add_child(name_label)
+		
+		# Артикул (меньше и серый)
+		var sku_label = Label.new()
+		sku_label.text = "Арт: " + entry["item"]["sku"]
+		sku_label.add_theme_font_size_override("font_size", 10)
+		sku_label.add_theme_color_override("font_color", Color(0.5, 0.5, 0.5))  # Серый цвет
+		hbox.add_child(sku_label)
+		
+		# Количество
+		var qty_label = Label.new()
+		qty_label.text = str(entry["quantity"]) + " шт."
+		qty_label.add_theme_font_size_override("font_size", 12)
+		hbox.add_child(qty_label)
+		
+		# Стоимость (выравнивание по правому краю)
+		var price_label = Label.new()
+		price_label.text = str(entry["total_price"]) + " руб."
+		price_label.add_theme_font_size_override("font_size", 12)
+		price_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		price_label.horizontal_alignment = HorizontalAlignment.HORIZONTAL_ALIGNMENT_RIGHT
+		hbox.add_child(price_label)
+		
+		cost_panel.add_child(hbox)
+	
+	# Итоговая строка с улучшенным стилем
+	var total_label = Label.new()
+	total_label.text = "Итого: " + str(total_cost) + " руб."
+	total_label.horizontal_alignment = HorizontalAlignment.HORIZONTAL_ALIGNMENT_CENTER
+	total_label.add_theme_font_size_override("font_size", 16)  # Больший шрифт для итога
+	total_label.add_theme_color_override("font_color", Color(1, 0, 0))  # Красный цвет
+	cost_panel.add_child(total_label)
+
+func _on_name_clicked(event, link):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if link:
+			OS.shell_open(link)
+			print("Открыта ссылка: ", link)
 
 func populate_sphere_option():
 	sphere_option.clear()
@@ -56,12 +149,6 @@ func populate_sphere_option():
 
 func _on_sphere_selected(index: int):
 	var selected_sphere = sphere_option.get_item_text(index)
-	# Update furnace texture based on selected sphere
-	if furnace_sprite and selected_sphere in furnace_textures and ResourceLoader.exists(furnace_textures[selected_sphere]):
-		furnace_sprite.texture = load(furnace_textures[selected_sphere])
-		print("Печь изменена на: ", selected_sphere)
-	else:
-		print("Текстура печи не найдена для: ", selected_sphere)
 	# Dynamically update series options
 	for sphere in data["spheres"]:
 		if sphere["name"] == selected_sphere:

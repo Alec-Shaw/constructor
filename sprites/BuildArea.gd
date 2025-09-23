@@ -1,5 +1,8 @@
 extends Panel
 
+signal element_added(item: Dictionary)  # Сигнал для добавления элемента
+signal element_removed(sku: String)     # Новый сигнал для удаления элемента
+
 var selected_node = null  # Узел, который сейчас перемещается
 var offset = Vector2.ZERO  # Смещение для точного перемещения
 var min_size = Vector2(1264, 851)  # Ваш новый минимальный размер
@@ -51,7 +54,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	print("Drop в BuildArea, позиция: ", at_position, " данные: ", data)
 	if ResourceLoader.exists(data["scene"]):
 		var scene = load(data["scene"]).instantiate()
-		var grid_size = 5
+		var grid_size = 32
 		var new_pos = at_position
 		# Расширение поля вниз, если new_pos.y < 0
 		var expand_amount = 0
@@ -89,7 +92,10 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		var metadata = scene.get_meta("metadata", {})
 		metadata["type"] = data.get("type", "unknown")
 		metadata["is_start_sandvich"] = data.get("is_start_sandvich", false)
+		metadata["sku"] = data.get("sku", "unknown")  # Добавляем sku для идентификации
 		scene.set_meta("metadata", metadata)
+		# Вызываем сигнал для обновления стоимости
+		emit_signal("element_added", data)
 		print("Добавлена сцена: ", data["scene"], " в позиции: ", scene.position, " type: ", metadata["type"])
 		print("Теперь детей в BuildArea: ", get_children().size())
 	else:
@@ -102,7 +108,7 @@ func _on_area_entered(area: Area2D):
 			var selected_metadata = selected_node.get_meta("metadata", {})
 			var other_metadata = other_node.get_meta("metadata", {})
 			if _can_snap(selected_metadata, other_metadata, area.name):
-				var snap_depth = 5.0  # Глубина прилипания в пикселях
+				var snap_depth = 10.0  # Глубина прилипания в пикселях
 				var distance = selected_node.global_position.distance_to(area.global_position)
 				if distance < snap_depth:
 					var snap_direction = (area.global_position - selected_node.global_position).normalized()
@@ -189,7 +195,7 @@ func _input(event):
 						break
 		else:
 			if is_dragging and selected_node:
-				var grid_size = 5
+				var grid_size = 32
 				var new_pos = local_pos - offset
 				new_pos.x = clamp(new_pos.x, 0, size.x - grid_size)
 				new_pos.y = clamp(new_pos.y, 0, size.y - grid_size)
@@ -210,7 +216,7 @@ func _input(event):
 			else:
 				print("Кнопка отпущена, selected_node сохранён")
 	elif event is InputEventMouseMotion and is_dragging and selected_node:
-		var grid_size = 5
+		var grid_size = 32
 		var local_pos = get_local_mouse_position()
 		var new_pos = local_pos - offset
 		# Расширение поля вниз, если new_pos.y < 0
@@ -270,8 +276,11 @@ func _on_rotate_pressed():
 
 func _on_delete_pressed():
 	if selected_node:
+		var metadata = selected_node.get_meta("metadata", {})
+		var sku = metadata.get("sku", "unknown")
 		selected_node.queue_free()
 		selected_node = null
-		print("Удалён узел")
+		emit_signal("element_removed", sku)  # Вызываем сигнал удаления с SKU
+		print("Удалён узел с SKU: ", sku)
 	else:
 		print("Ошибка: Нет выбранного узла для удаления")
