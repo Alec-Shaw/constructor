@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://e1vycbb1kxw5"]
+[gd_scene load_steps=18 format=3 uid="uid://e1vycbb1kxw5"]
 
 [ext_resource type="Script" uid="uid://cbrwhffeeetn3" path="res://sprites/Main.gd" id="1_wrl6d"]
 [ext_resource type="FontFile" uid="uid://bu1iyi0liu3ed" path="res://fonts/RobotoCondensed-Regular.ttf" id="2_ehl27"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://efgr5koyjd5b" path="res://sprites/Camera.gd" id="6_tc3gk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehl27"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.881937, 0.881937, 0.881937, 1)
 border_width_top = 2
 border_color = Color(0.521569, 0.521569, 0.521569, 1)
 
@@ -53,6 +53,8 @@ border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc3gk"]
 bg_color = Color(1, 1, 1, 0.905882)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t422m"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_wrl6d")
@@ -150,8 +152,10 @@ offset_top = 20.0
 offset_right = -146.0
 offset_bottom = 51.0
 mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_ehl27")
 theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_t422m")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(1, 0)
@@ -161,7 +165,11 @@ offset_right = -156.0
 offset_bottom = 13.0
 mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("2_ehl27")
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
 theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
 text = "Выбери сферу применения"
 
 [node name="SingleSeriesOptionButton" type="OptionButton" parent="."]
@@ -179,6 +187,7 @@ offset_bottom = 88.0
 mouse_filter = 1
 
 [node name="AccessoriesSeriesOptionButton" type="OptionButton" parent="."]
+visible = false
 offset_left = -146.0
 offset_top = 68.0
 offset_right = -31.0

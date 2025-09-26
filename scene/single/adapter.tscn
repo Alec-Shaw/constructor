@@ -5,13 +5,13 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1xty"]
 resource_local_to_scene = true
-size = Vector2(48, 43)
+size = Vector2(46, 25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w1xty"]
-radius = 8.0
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_muoyn"]
-radius = 7.0
+radius = 4.0
 
 [node name="adapter" type="Node2D"]
 
@@ -25,13 +25,13 @@ position = Vector2(1.52588e-05, 1.52588e-05)
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-position = Vector2(-6.67572e-06, -0.500008)
+position = Vector2(-7.6294e-06, 4.49999)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_w1xty")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
 z_index = -1
-position = Vector2(0.37121, -44.75)
+position = Vector2(0.37121, -36.75)
 scale = Vector2(1.04482, 1.04545)
 texture = ExtResource("2_rqc1m")
 

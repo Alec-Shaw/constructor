@@ -5,6 +5,7 @@
 	  "single_series": "GS",
 	  "sandvich_series": ["GS-25", "GS-50"],
 	  "accessories_series": "GS/HF",
+	  "furnace_texture": "res://sprites/base.png",
 	  "items": {
 		"GS": [
 		  {"name": "Craft GS Адаптер котла ММ", "batch": "GS", "sku": "c321601", "price": 638, "diameter": "130 мм", "type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/adapter-kotla-mm", "texture": "res://sprites/single/adapter.png", "scene": "res://scene/single/adapter.tscn"},
@@ -53,8 +54,8 @@
 		  {"name": "Craft GS зонт", "batch": "GS", "sku": "c321406", "price": 3495, "diameter": "250 мм","type": "single", "link": "https://house.craft.ru/store/seriya-craft-gs/zont", "texture": "res://sprites/single/zont.png", "scene": "res://scene/single/zont.tscn"}
 		],
 		"GS-25": [
-		  {"name": "Сэндвич 1 м", "batch": "GS-25", "sku": "GS25-001", "price": 1500, "diameter": "125 мм", "type": "sandvich", "link": "https://example.com/sandvich1m", "texture": "res://sprites/sandvich/sandvich1m.svg", "scene": "res://scene/sandvich/sandvich1m.tscn"},
-		  {"name": "Колено 90", "batch": "GS-25", "sku": "GS25-002", "price": 800, "diameter": "110 мм", "type": "sandvich", "link": "https://example.com/koleno90", "texture": "res://sprites/sandvich/sandvich_koleno90.svg", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"}
+		  {"name": "Сэндвич 1 м", "batch": "GS-25", "sku": "GS25-001", "price": 1500, "diameter": "130 мм", "type": "sandvich", "link": "https://example.com/sandvich1m", "texture": "res://sprites/sandvich/sandvich1m.png", "scene": "res://scene/sandvich/sandvich1m.tscn"},
+		  {"name": "Колено 90", "batch": "GS-25", "sku": "GS25-002", "price": 800, "diameter": "150 мм", "type": "sandvich", "link": "https://example.com/koleno90", "texture": "res://sprites/sandvich/sandvich_koleno90.png", "scene": "res://scene/sandvich/sandvich_koleno90.tscn"}
 		],
 		"GS-50": [
 		  {"name": "Craft GS-50 старт-сэндвич", "batch": "GS-50", "sku": "c340601", "price": 3157, "diameter": "130 мм", "is_start_sandvich": true, "link": "https://house.craft.ru/store/seriya-craft-gs-50/start-sandwich", "texture": "res://sprites/sandvich/start_sendvich.png", "scene": "res://scene/sandvich/start_sendvich.tscn"},
@@ -107,13 +108,14 @@
 		  {"name": "Кронштейн", "batch": "GS/HF", "sku": "GSHF-001", "price": 300, "diameter": "", "link": "https://example.com/kronshtein", "texture": "res://sprites/accessories/kronshtein.svg", "scene": "res://scene/accessories/kronshtein.tscn"},
 		  {"name": "Крышная разделка угловая", "batch": "GS/HF", "sku": "GSHF-002", "price": 450, "diameter": "130 мм", "link": "https://example.com/razdelka", "texture": "res://sprites/accessories/krishnaia_razdelka_uglovaya.svg", "scene": "res://scene/accessories/krishnaia_razdelka_uglovaya.tscn"}
 		]
-	  }
+	  },
 	},
 	{
 	  "name": "Для печей, котлов и каминов",
 	  "single_series": "HF",
 	  "sandvich_series": ["HF-25", "HF-50"],
 	  "accessories_series": "GS/HF",
+	  "furnace_texture": "res://sprites/atmo.png",
 	  "items": {
 		"HF": [
 		  {"name": "Адаптер", "batch": "HF", "sku": "HF-001", "price": 500, "diameter": "130 мм", "link": "https://example.com/adapter", "texture": "res://sprites/single/adapter.svg", "scene": "res://scene/single/adapter.tscn"},

@@ -8,7 +8,7 @@ extends Node2D
 @onready var sphere_option = $SphereOptionButton  # Назначение
 @onready var single_series_option = $SingleSeriesOptionButton  # Серия одностенных
 @onready var sandvich_series_option = $SandvichSeriesOptionButton  # Серия утепленных
-@onready var accessories_series_option = $AccessoriesSeriesOptionButton  # Серия комплектующих
+#@onready var accessories_series_option = $AccessoriesSeriesOptionButton  # Серия комплектующих
 @onready var diameter_option = $DiameterOptionButton  # Диаметр (обязательный)
 @onready var cost_panel = $CostPanel  # Новая панель для стоимости (VBoxContainer)
 
@@ -39,7 +39,7 @@ func _ready():
 	sphere_option.item_selected.connect(_on_sphere_selected)
 	single_series_option.item_selected.connect(_on_single_series_selected)
 	sandvich_series_option.item_selected.connect(_on_sandvich_series_selected)
-	accessories_series_option.item_selected.connect(_on_accessories_series_selected)
+	#accessories_series_option.item_selected.connect(_on_accessories_series_selected)
 	diameter_option.item_selected.connect(_on_diameter_selected)
 	
 	# Connect to BuildArea signal for element addition
@@ -148,24 +148,40 @@ func populate_sphere_option():
 		_on_sphere_selected(0)
 
 func _on_sphere_selected(index: int):
-	var selected_sphere = sphere_option.get_item_text(index)
+	var selected_sphere_name = sphere_option.get_item_text(index)
+	# Обновляем FurnaceSprite
+	var furnace = $BuildAreaBackground/FurnaceSprite
+	if furnace:
+		for sphere in data["spheres"]:
+			if sphere["name"] == selected_sphere_name and sphere.has("furnace_texture"):
+				var texture_path = sphere["furnace_texture"]
+				var texture = load(texture_path)
+				if texture:
+					furnace.texture = texture
+					print("FurnaceSprite обновлён для сферы: ", selected_sphere_name)
+				else:
+					print("Ошибка загрузки текстуры: ", texture_path)
+				break
+	else:
+		print("FurnaceSprite не найден.")
+	
 	# Dynamically update series options
 	for sphere in data["spheres"]:
-		if sphere["name"] == selected_sphere:
+		if sphere["name"] == selected_sphere_name:
 			single_series_option.clear()
 			sandvich_series_option.clear()
-			accessories_series_option.clear()
+			#accessories_series_option.clear()
 			single_series_option.add_item(sphere["single_series"])
 			for series in sphere["sandvich_series"]:
 				sandvich_series_option.add_item(series)
-			accessories_series_option.add_item(sphere["accessories_series"])
+			#accessories_series_option.add_item(sphere["accessories_series"])
 			# Trigger series selection with default (first) option
 			if single_series_option.get_item_count() > 0:
 				single_series_option.select(0)
 			if sandvich_series_option.get_item_count() > 0:
 				sandvich_series_option.select(0)
-			if accessories_series_option.get_item_count() > 0:
-				accessories_series_option.select(0)
+			#if accessories_series_option.get_item_count() > 0:
+			#	accessories_series_option.select(0)
 			_on_series_selected(0)  # Trigger update with default series
 			break
 

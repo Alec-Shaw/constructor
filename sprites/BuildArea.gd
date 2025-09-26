@@ -54,7 +54,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	print("Drop в BuildArea, позиция: ", at_position, " данные: ", data)
 	if ResourceLoader.exists(data["scene"]):
 		var scene = load(data["scene"]).instantiate()
-		var grid_size = 32
+		var grid_size = 4
 		var new_pos = at_position
 		# Расширение поля вниз, если new_pos.y < 0
 		var expand_amount = 0
@@ -195,7 +195,7 @@ func _input(event):
 						break
 		else:
 			if is_dragging and selected_node:
-				var grid_size = 32
+				var grid_size = 4
 				var new_pos = local_pos - offset
 				new_pos.x = clamp(new_pos.x, 0, size.x - grid_size)
 				new_pos.y = clamp(new_pos.y, 0, size.y - grid_size)
@@ -216,7 +216,7 @@ func _input(event):
 			else:
 				print("Кнопка отпущена, selected_node сохранён")
 	elif event is InputEventMouseMotion and is_dragging and selected_node:
-		var grid_size = 32
+		var grid_size = 4
 		var local_pos = get_local_mouse_position()
 		var new_pos = local_pos - offset
 		# Расширение поля вниз, если new_pos.y < 0
