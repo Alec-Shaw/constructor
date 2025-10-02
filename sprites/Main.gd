@@ -74,7 +74,7 @@ func remove_element(sku: String):
 		total_cost += entry["total_price"]
 	update_cost_panel()
 
-func update_cost_panel():
+func update_cost_panel():	
 	# Удаляем все дочерние узлы
 	for child in cost_panel.get_children():
 		child.queue_free()
@@ -84,7 +84,6 @@ func update_cost_panel():
 		var hbox = HBoxContainer.new()
 		hbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		hbox.add_theme_constant_override("separation", 10)  # Отступ между элементами в строке
-		
 		# Изображение
 		var texture_rect = TextureRect.new()
 		var icon = load(entry["item"]["texture"])
@@ -98,7 +97,10 @@ func update_cost_panel():
 		var name_label = Label.new()
 		name_label.text = entry["item"]["name"]
 		name_label.add_theme_font_size_override("font_size", 14)  # Увеличиваем размер шрифта
+		name_label.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0))  # Черный цвет
 		name_label.mouse_filter = Control.MOUSE_FILTER_STOP
+		name_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		name_label.autowrap_mode = TextServer.AUTOWRAP_WORD
 		name_label.connect("gui_input", func(event): _on_name_clicked(event, entry["item"]["link"]))
 		hbox.add_child(name_label)
 		
@@ -113,13 +115,15 @@ func update_cost_panel():
 		var qty_label = Label.new()
 		qty_label.text = str(entry["quantity"]) + " шт."
 		qty_label.add_theme_font_size_override("font_size", 12)
+		qty_label.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0))  # Черный цвет
 		hbox.add_child(qty_label)
 		
 		# Стоимость (выравнивание по правому краю)
 		var price_label = Label.new()
 		price_label.text = str(entry["total_price"]) + " руб."
 		price_label.add_theme_font_size_override("font_size", 12)
-		price_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		price_label.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0))  # Черный цвет
+		#price_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		price_label.horizontal_alignment = HorizontalAlignment.HORIZONTAL_ALIGNMENT_RIGHT
 		hbox.add_child(price_label)
 		
