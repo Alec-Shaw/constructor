@@ -1,10 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0bsw3l0y3ey0"]
+[gd_scene load_steps=8 format=3 uid="uid://c0bsw3l0y3ey0"]
 
-[ext_resource type="Texture2D" uid="uid://d37d0ef1do502" path="res://sprites/single/troinik90.png" id="1_0h2do"]
+[ext_resource type="Texture2D" uid="uid://beyg0ieogxgbx" path="res://sprites/single/troinik901.png" id="1_mkphq"]
+[ext_resource type="Texture2D" uid="uid://bth0bryvwis88" path="res://sprites/single/troinik903.png" id="2_hbete"]
+[ext_resource type="Texture2D" uid="uid://jxbpimu1ibnf" path="res://sprites/single/troinik902.png" id="3_udn0v"]
+[ext_resource type="Texture2D" uid="uid://cqt1deb3bs7ju" path="res://sprites/single/troinik904.png" id="4_mudhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h034m"]
+size = Vector2(158, 200)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kioso"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4wxw"]
+radius = 2.23607
 
 [node name="adapter" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.00002, -1)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_0h2do")
+texture = ExtResource("1_mkphq")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(-28, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+z_index = 1
+position = Vector2(33, 4)
+shape = SubResource("RectangleShape2D_h034m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+z_index = -1
+position = Vector2(-14, 82)
+texture = ExtResource("2_hbete")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+z_index = -1
+position = Vector2(-16, -82)
+texture = ExtResource("3_udn0v")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+z_index = -1
+position = Vector2(66, -6)
+texture = ExtResource("4_mudhy")
+
+[node name="ConnectionIn" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionIn"]
+position = Vector2(-5, 48)
+shape = SubResource("CircleShape2D_kioso")
+
+[node name="ConnectionIn" type="Area2D" parent="ConnectionIn"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionIn/ConnectionIn"]
+position = Vector2(37, -3)
+shape = SubResource("CircleShape2D_kioso")
+
+[node name="ConnectionOut" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConnectionOut"]
+position = Vector2(-5, -35)
+shape = SubResource("CircleShape2D_a4wxw")

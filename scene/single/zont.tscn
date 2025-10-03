@@ -1,10 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0bsw3l0y3ey0"]
 
-[ext_resource type="Texture2D" uid="uid://di6lkxebgq78h" path="res://sprites/single/zont.svg" id="1_60v4w"]
+[ext_resource type="Texture2D" uid="uid://5s318rx7plw8" path="res://sprites/single/zont.png" id="1_60v4w"]
 
 [node name="adapter" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(249, 230)
-scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_60v4w")
